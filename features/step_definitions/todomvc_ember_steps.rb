@@ -116,3 +116,15 @@ Then /^(?:|I )should see all my todo items have been completed$/ do
     expect(all('li.completed').length).to eq(2)
   end
 end
+
+When /^(?:|I )click on the completed filter$/ do
+  within('#filters') do
+    click_on('Completed')
+  end
+end
+
+Then /^(?:|I )should see all my completed items$/ do
+  within('#todo-list') do
+    expect(all('li.completed').length).to eq(2)
+  end
+end
