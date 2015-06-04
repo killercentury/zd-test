@@ -62,3 +62,26 @@ Then /^(?:|I )should see my todo item is completed$/ do
     expect(page).to have_selector('li.completed')
   end
 end
+
+And /^(?:|I )have a completed todo item$/ do
+  fill_in("new-todo", :with => 'clean my room')
+  find('#new-todo').native.send_keys(:return)
+  within('#todo-list') do
+    expect(page).to have_content('clean my room')
+    first('li input.ember-checkbox').click
+    expect(page).to have_selector('li.completed')
+  end
+end
+
+When /^(?:|I )re-activate a todo item$/ do
+  within('#todo-list') do
+    first('li.completed input.ember-checkbox').click
+  end
+end
+
+Then /^(?:|I )should see my todo item has been re-activated$/ do
+  within('#todo-list') do
+    expect(page).to have_no_selector('li.completed')
+    expect(page).to have_selector('li')
+  end
+end
