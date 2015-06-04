@@ -24,9 +24,9 @@ end
 #Capybara.default_driver = :webkit
 #Capybara.default_driver = :webkit_ignore_ssl
 #Capybara.default_driver = :selenium
-#Capybara.default_driver = :selenium_chrome
+Capybara.default_driver = :selenium_chrome
 #Capybara.default_driver = :selenium_safari
-Capybara.default_driver = :poltergeist
+#Capybara.default_driver = :poltergeist
 
 Capybara.default_selector = :css
 Capybara.default_wait_time = 15
