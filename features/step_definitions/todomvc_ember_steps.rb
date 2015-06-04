@@ -128,3 +128,14 @@ Then /^(?:|I )should see all my completed items$/ do
     expect(all('li.completed').length).to eq(2)
   end
 end
+
+When /^(?:|I )click on the close icon$/ do
+  within('#todo-list') do
+    first('li').hover
+    find('button.destroy').click
+  end
+end
+
+Then /^(?:|I )should see my todo item has gone$/ do
+  expect(page).to have_no_content('clean my room')
+end
