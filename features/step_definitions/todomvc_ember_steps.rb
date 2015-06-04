@@ -23,10 +23,30 @@ When /^(?:|I )add a todo item$/ do
   find('#new-todo').native.send_keys(:return)
 end
 
-When /^(?:|I )should see my todo item being list$/ do
+Then /^(?:|I )should see my todo item being list$/ do
   within('#todo-list') do
     expect(page).to have_content('clean my room')
   end
 end
 
+And /^(?:|I )have added a todo item$/ do
+  fill_in("new-todo", :with => 'clean my room')
+  find('#new-todo').native.send_keys(:return)
+  within('#todo-list') do
+    expect(page).to have_content('clean my room')
+  end
+end
 
+When /^(?:|I )edit a todo item$/ do
+  within('#todo-list') do
+    first('li').double_click
+    first('li.editing input').set('clean my car')
+    first('li.editing input').native.send_keys(:return)
+  end
+end
+
+Then /^(?:|I )should see my todo item has been updated$/ do
+  within('#todo-list') do
+    expect(page).to have_content('clean my car')
+  end
+end
