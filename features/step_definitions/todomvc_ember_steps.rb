@@ -85,3 +85,14 @@ Then /^(?:|I )should see my todo item has been re-activated$/ do
     expect(page).to have_selector('li')
   end
 end
+
+When /^(?:|I )add a second todo item$/ do
+  fill_in("new-todo", :with => 'buy a cake')
+  find('#new-todo').native.send_keys(:return)
+end
+
+Then /^(?:|I )should see my second todo item being list$/ do
+  within('#todo-list') do
+    expect(page).to have_content('buy a cake')
+  end
+end
