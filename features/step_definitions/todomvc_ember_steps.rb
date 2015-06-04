@@ -39,7 +39,7 @@ end
 
 When /^(?:|I )edit a todo item$/ do
   within('#todo-list') do
-    first('li').double_click
+    first('li label').double_click
     first('li.editing input').set('clean my car')
     first('li.editing input').native.send_keys(:return)
   end
