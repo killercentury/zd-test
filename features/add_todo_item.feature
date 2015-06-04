@@ -6,4 +6,5 @@ Feature: Add a todo item
 
   Scenario: An user adds a todo item
     Given I am on the TodoMVC Ember.js page
-    Then I should see "A framework for creating ambitious web applications."
+    When I add a todo item
+    Then I should see my todo item being list
