@@ -50,3 +50,15 @@ Then /^(?:|I )should see my todo item has been updated$/ do
     expect(page).to have_content('clean my car')
   end
 end
+
+When /^(?:|I )complete a todo item$/ do
+  within('#todo-list') do
+    first('li input.ember-checkbox').click
+  end
+end
+
+Then /^(?:|I )should see my todo item is completed$/ do
+  within('#todo-list') do
+    expect(page).to have_selector('li.completed')
+  end
+end
