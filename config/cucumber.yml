@@ -1,0 +1,7 @@
+# config/cucumber.yml
+##YAML Template
+---
+default: -t ~@wip -f pretty
+json: -f json -o cucumber.json
+html: -f html -o cucumber.html
+wip: -t @wip
