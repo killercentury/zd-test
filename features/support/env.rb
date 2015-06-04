@@ -10,7 +10,7 @@ require 'base64'
 #end
 
 Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app,:timeout => 45,:phantomjs_options => ['--load-images=no', '--ignore-ssl-errors=yes'],:window_size => [1440, 900],:js_errors => false)
+  Capybara::Poltergeist::Driver.new(app,:timeout => 15,:phantomjs_options => ['--load-images=no', '--ignore-ssl-errors=yes'],:window_size => [1440, 900],:js_errors => false)
 end
 
 Capybara.register_driver :selenium_chrome do |app|
@@ -29,7 +29,7 @@ end
 Capybara.default_driver = :poltergeist
 
 Capybara.default_selector = :css
-Capybara.default_wait_time = 45
+Capybara.default_wait_time = 15
 #Capybara.configure do |config|
 #  config.ignore_hidden_elements = false
 #  config.visible_text_only = true
