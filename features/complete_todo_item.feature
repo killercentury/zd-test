@@ -1,4 +1,4 @@
-Feature: Add a todo item
+Feature: Complete a todo item
   
   In order to remind me of done item
   As an user

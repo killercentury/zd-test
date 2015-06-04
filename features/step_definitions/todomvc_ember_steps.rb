@@ -96,3 +96,23 @@ Then /^(?:|I )should see my second todo item being list$/ do
     expect(page).to have_content('buy a cake')
   end
 end
+
+And /^(?:|I )have added a second todo item$/ do
+  step 'I add a second todo item'
+  step 'I should see my second todo item being list'
+end
+
+And /^(?:|I )have added multiple todo items$/ do
+  step 'I have added a todo item'
+  step 'I have added a second todo item'
+end
+
+When /^(?:|I )complete all todo items$/ do
+  find('#toggle-all').click
+end
+
+Then /^(?:|I )should see all my todo items have been completed$/ do
+  within('#todo-list') do
+    expect(all('li.completed').length).to eq(2)
+  end
+end
