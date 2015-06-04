@@ -139,3 +139,14 @@ end
 Then /^(?:|I )should see my todo item has gone$/ do
   expect(page).to have_no_content('clean my room')
 end
+
+When /^(?:|I )click on the clear completed button$/ do
+  within('#footer') do
+    click_on('Clear completed')
+  end
+end
+
+Then /^(?:|I )should see my completed todo items have gone$/ do
+  expect(page).to have_no_content('clean my room')
+  expect(page).to have_no_content('buy a cake')
+end
