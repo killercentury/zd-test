@@ -1,3 +1,4 @@
+@clear-local-storage
 Feature: Filter todo items
   
   In order to filter todo items

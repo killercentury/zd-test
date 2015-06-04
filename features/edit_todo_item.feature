@@ -1,3 +1,4 @@
+@clear-local-storage
 Feature: Edit a todo item
   
   In order to update or fix my todo item

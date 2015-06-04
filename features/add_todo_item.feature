@@ -1,3 +1,4 @@
+@clear-local-storage
 Feature: Add a todo item
   
   In order to remember what needs to be done

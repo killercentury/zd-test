@@ -1,3 +1,4 @@
+@clear-local-storage
 Feature: Clear all completed todo items
   
   In order to clear all completed todo items from the list completely

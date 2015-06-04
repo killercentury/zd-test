@@ -1,3 +1,4 @@
+@clear-local-storage
 Feature: Clear a single todo item
   
   In order to clear a single todo item from the list completely

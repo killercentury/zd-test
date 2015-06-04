@@ -1,3 +1,4 @@
+@clear-local-storage
 Feature: Add a second todo item
   
   In order to log another to be done

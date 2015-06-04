@@ -1,3 +1,4 @@
+@clear-local-storage
 Feature: Re-activate a todo item
   
   In order to cancel complete action

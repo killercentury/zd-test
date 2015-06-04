@@ -1,3 +1,4 @@
+@clear-local-storage
 Feature: Complete all todo items
   
   In order to mark all todo items as completed

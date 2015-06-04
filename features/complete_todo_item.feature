@@ -1,3 +1,4 @@
+@clear-local-storage
 Feature: Complete a todo item
   
   In order to remind me of done item
