@@ -19,7 +19,7 @@ Given /^(?:|I )am on the TodoMVC Ember.js page$/ do
 end
 
 When /^(?:|I )add a todo item$/ do
-  fill_in("new-todo", :with => 'clean my room')
+  fill_in('new-todo', :with => 'clean my room')
   find('#new-todo').native.send_keys(:return)
 end
 
@@ -30,7 +30,7 @@ Then /^(?:|I )should see my todo item being list$/ do
 end
 
 And /^(?:|I )have added a todo item$/ do
-  fill_in("new-todo", :with => 'clean my room')
+  fill_in('new-todo', :with => 'clean my room')
   find('#new-todo').native.send_keys(:return)
   within('#todo-list') do
     expect(page).to have_content('clean my room')
@@ -64,7 +64,7 @@ Then /^(?:|I )should see my todo item is completed$/ do
 end
 
 And /^(?:|I )have a completed todo item$/ do
-  fill_in("new-todo", :with => 'clean my room')
+  fill_in('new-todo', :with => 'clean my room')
   find('#new-todo').native.send_keys(:return)
   within('#todo-list') do
     expect(page).to have_content('clean my room')
@@ -87,7 +87,7 @@ Then /^(?:|I )should see my todo item has been re-activated$/ do
 end
 
 When /^(?:|I )add a second todo item$/ do
-  fill_in("new-todo", :with => 'buy a cake')
+  fill_in('new-todo', :with => 'buy a cake')
   find('#new-todo').native.send_keys(:return)
 end
 
